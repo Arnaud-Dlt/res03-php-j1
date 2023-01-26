@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-
     <?php 
         $students = [
             [
@@ -33,9 +31,18 @@
                 "average" => -1
             ]
         ];
+        
+        function average(array $grades) :float {
+            $sum = 0;
+            foreach($grades as $note)
+            {
+                $sum+=$note;
+            }
+            return round($sum / count($grades), 1);
+        }
     ?>
 
-
+<!DOCTYPE html>
 <html lang="fr">
 
 <head>
@@ -53,7 +60,7 @@
     <meta property="og:description" content="">
     <meta property="og:locale" content="fr_FR">
     <link rel="stylesheet" href="assets/styles/css/style.css">
-    <title></title>
+    <title>Titre</title>
 </head>
 
 <body>
@@ -70,16 +77,13 @@
             <section>
                 <h2>Notes : </h2>
                 <ul>
-                    <?php for(){
-                        
-                    }?>
-                    <li></li>
-                    <li>Note 2</li>
-                    <li>Note 3</li>
+                    <?php foreach($student["grades"] as $grade){ ?>
+                    <li><?php echo "{$grade}" ?></li>
+                    <?php } ?>
                 </ul>
             </section>
             <footer>
-                <h3>Moyenne des notes de l'étudiant </h3>
+                <h3><?= average($student["grades"]) ?></h3>
             </footer>
         </article>
         
