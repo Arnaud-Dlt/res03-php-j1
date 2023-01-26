@@ -28,7 +28,10 @@
 // $str=(string)$float;
 // print_r($str)
 
-/// BOUCLES
+
+
+// / BOUCLES
+
 $animals = ["Chat", "Chien", "Lapin", "Souris"];
 
 foreach($animals as $animal){
@@ -50,6 +53,24 @@ $user = [
     "lastName" => "Obama"
 ];
 
-echo "Je suis $user["firstname"] $user["lastname"], le 44ème président des USA.."
+echo "Je suis {$user["firstName"]} {$user["lastName"]}, le 44ème président des USA..";
+echo "<br>";
+
+
+$users = [
+    [
+        "firstName" => "Mari",
+        "lastName" => "Doucet"
+    ],
+    [
+        "firstName" => "Hugues",
+        "lastName" => "Froger"
+    ]
+];
+
+foreach($users as $user){
+    echo "{$user["firstName"]} {$user["lastName"]}";
+    echo "<br>";
+}
 
 ?>
